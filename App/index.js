@@ -50,7 +50,7 @@ export default function App() {
 
     const handlePronounce = () => {
         if (currentWord) {
-            Speech.speak(currentWord);
+            Speech.speak(currentWord, { language: 'en-US' });
         }
     };
 
