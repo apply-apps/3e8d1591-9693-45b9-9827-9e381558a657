@@ -49,8 +49,9 @@ export default function App() {
     };
 
     const handlePronounce = () => {
-        const letter = letters[currentLetterIndex];
-        Speech.speak(letter);
+        if (currentWord) {
+            Speech.speak(currentWord);
+        }
     };
 
     return (
@@ -101,15 +102,15 @@ const styles = StyleSheet.create({
         color: '#555',
     },
     buttonContainer: {
-        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         width: '80%',
     },
     button: {
         padding: 20,
         borderRadius: 10,
         margin: 10,
+        width: '100%',
     },
     nextButton: {
         backgroundColor: '#007AFF',
